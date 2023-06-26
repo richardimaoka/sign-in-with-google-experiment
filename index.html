@@ -9,4 +9,19 @@
   <body>
     this is a blank document
   </body>
+  <script>
+    window.onload = function () {
+      console.log("loaded");
+      google.accounts.id.initialize({
+        client_id:
+          "13173511749-e9dutacu8tmq9f8ro1bt9dh74ajqb700.apps.googleusercontent.com",
+        callback: handleCredentialResponse,
+      });
+      google.accounts.id.prompt();
+    };
+
+    handleCredentialResponse = function () {
+      console.log("handleCredentialResponse called");
+    };
+  </script>
 </html>
