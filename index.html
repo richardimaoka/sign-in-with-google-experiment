@@ -7,7 +7,7 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>
-    this is a blank document
+    <div id="parent">sign in</div>
   </body>
   <script>
     window.onload = function () {
@@ -17,7 +17,8 @@
           "13173511749-e9dutacu8tmq9f8ro1bt9dh74ajqb700.apps.googleusercontent.com",
         callback: handleCredentialResponse,
       });
-      google.accounts.id.prompt();
+      const parent = document.getElementById("parent");
+      google.accounts.id.renderButton(parent, {});
     };
 
     handleCredentialResponse = function () {
